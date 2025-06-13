@@ -8,6 +8,11 @@ $some = function (int $a, int $b): int {
     return $a + $b;
 };
 
+function mul(int $a, int $b): int
+{
+    return $a * $b;
+}
+
 /** 
  *  Function that takes a function as parameter
  *  Callable means that the function can be called as a variable
@@ -18,10 +23,4 @@ function show(callable $fn, float $a, float $b)
 }
 
 show($some, 10, 20);
-
-function mul(int $a, int $b): int
-{
-    return $a * $b;
-}
-
 show("mul", 10, 20);
