@@ -9,7 +9,7 @@ class Repository implements RepositoryInterface
     private string $fileData;
     private array $db;
 
-    public function __construct(string $fileData)
+    public function __construct()
     {
         $this->fileData = __DIR__ . '/data.json';
         $json = file_get_contents($this->fileData);

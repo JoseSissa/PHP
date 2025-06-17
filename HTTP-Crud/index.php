@@ -2,18 +2,41 @@
 
 require_once __DIR__ . '/validators/autoload.php';
 
+use app\business\Get;
+use app\business\Add;
+use app\business\Update;
+use app\business\Delete;
+
+use app\data\Repository;
+use app\validators\Validator;
+
 use app\exceptions\DataException;
 use app\exceptions\ValidationException;
+
+$repository = new Repository();
+$validator = new Validator();
 
 try {
     switch ($_SERVER['REQUEST_METHOD']) {
         case 'GET':
+            $get = new Get($repository);
+            $data = $get->get();
+            echo json_encode($data);
             break;
         case 'POST':
+            $body = json_decode(file_get_contents('php://input'), true);
+            $add = new Add($validator, $repository);
+            $add->add($body);
             break;
         case 'PUT':
+            $body = json_decode(file_get_contents('php://input'), true);
+            $put = new Update($validator, $repository);
+            $put->update($body);
             break;
         case 'DELETE':
+            $id = $_GET['id'];
+            $delete = new Delete($repository);
+            $delete->delete($id);
             break;
         default:
             http_response_code(405);
