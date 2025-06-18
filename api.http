@@ -1,0 +1,25 @@
+### GET
+GET http://localhost/PHP/http/get.php?name=Jose&age=25
+
+### POST
+POST http://localhost/PHP/http/post.php
+Content-Type: application/json
+
+{
+    "name": "Jose",
+    "age": 25
+}
+
+
+### PUT
+PUT http://localhost/PHP/http/put.php
+Content-Type: application/json
+
+{
+    "id": 1,
+    "name": "Karol",
+    "age": 25
+}
+
+### DELETE
+DELETE http://localhost/PHP/http/delete.php?id=2
