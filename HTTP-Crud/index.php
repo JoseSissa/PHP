@@ -1,6 +1,6 @@
 <?php
 
-require_once __DIR__ . '/validators/autoload.php';
+require_once __DIR__ . '/autoload.php';
 
 use app\business\Get;
 use app\business\Add;
