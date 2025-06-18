@@ -52,4 +52,7 @@ try {
     // \Exception is to use Exception class, we can put use Exception; instead, result will be the same
     http_response_code(500);
     echo json_encode(['error' => $e->getMessage()]);
+} catch (TypeError $e) {
+    http_response_code(400);
+    echo json_encode(['TypeError' => $e->getMessage()]);
 }
