@@ -6,7 +6,7 @@ POST http://localhost/PHP/HTTP-Crud/index.php
 Content-Type: application/json
 
 {
-    "name": "Corona",
+    "name": "Corona 3",
     "alcohol": 4.5,
     "idBrand": 2
 }
@@ -16,10 +16,10 @@ PUT http://localhost/PHP/HTTP-Crud/index.php
 Content-Type: application/json
 
 {
-    "id": 99,
+    "id": 2,
     "name": "Jose Sissa",
     "alcohol": 4.5
 }
 
 ### Delete data
-DELETE http://localhost/PHP/HTTP-Crud/index.php?id=8
+DELETE http://localhost/PHP/HTTP-Crud/index.php?id=2

@@ -8,6 +8,7 @@ use app\business\Update;
 use app\business\Delete;
 
 use app\data\Repository;
+use app\session\Session;
 use app\database\RepositoryDB;
 use app\validators\Validator;
 
@@ -18,7 +19,8 @@ $validator = new Validator();
 
 try {
     // $repository = new Repository();
-    $repository = new RepositoryDB();
+    // $repository = new RepositoryDB();
+    $repository = new Session();
 
     switch ($_SERVER['REQUEST_METHOD']) {
         case 'GET':
