@@ -66,3 +66,50 @@ REFERENCES brand(id);
 
 UPDATE beer
 SET idBrand = 1;
+
+
+-- ANOTHER EXAMPLE
+
+USE pub;
+
+CREATE TABLE brand (
+	id INT AUTO_INCREMENT PRIMARY KEY,
+    name VARCHAR(255) NOT NULL
+);
+
+INSERT INTO brand(name)
+VALUES
+('Minerva'), ('Fuller');
+
+ALTER TABLE beer
+ADD COLUMN idBrand INT;
+
+ALTER TABLE beer
+ADD CONSTRAINT fk_brand
+FOREIGN KEY (idBrand)
+REFERENCES brand(id);
+
+UPDATE beer
+SET idBrand = 1;
+
+SELECT * FROM beer;
+SELECT * FROM brand;
+
+SELECT beer.name as nameBeer, brand.name as nameBrand
+FROM beer
+INNER JOIN brand
+ON beer.idBrand = brand.id;
+
+SELECT beer.name as nameBeer, brand.name as nameBrand, brand.id as idBrand
+FROM beer
+INNER JOIN brand
+ON beer.idBrand = brand.id
+WHERE brand.id = 2;
+
+INSERT INTO beer(name, alcohol)
+VALUES ('Weizen', 4.5);
+
+SELECT beer.name as nameBeer, brand.name as nameBrand
+FROM beer
+left JOIN brand
+ON beer.idBrand = brand.id;
