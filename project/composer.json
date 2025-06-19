@@ -4,9 +4,18 @@
     "type": "project",
     "autoload": {
         "psr-4": {
-            "Sissa\\Excel\\": "src/"
-        }
+            "Sissa\\Excel\\": "src/",
+            "app\\interfaces\\": "interfaces/",
+            "app\\data\\": "data/",
+            "app\\excel\\": "excel/",
+            "app\\business\\": "business/"
+        },
+        "files": [
+            "config/db_config.php"
+        ]
     },
     "minimum-stability": "dev",
-    "require": {}
+    "require": {
+        "phpoffice/phpspreadsheet": "dev-master"
+    }
 }
